@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --job-name=test2
+#SBATCH -p free
+#SBATCH --nodes=1
+#SBATCH --ntasks=1    
+#SBATCH --mem=1G
+#SBATCH --error=%A-%x.err
+#SBATCH --out=%A-%x.out
+
+currenthost=`hostname`
+echo "This job was run on $currenthost "
+
+env
+

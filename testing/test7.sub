@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#SBATCH --job-name=test6
+#SBATCH -p free          ## partition/queue name
+#SBATCH --nodes=1
+#SBATCH --mem=1G
+#SBATCH --qos=low
+#SBATCH -a 1-3
+#SBATCH --error=%A-%x-%a.err
+#SBATCH --out=%A-%x-%a.out
+
+currenthost=`hostname`
+echo "This job was run on $currenthost "
+
+# create sample input file 
+input=/tmp/my.txt
+echo "line1 11 12" > $input
+echo "line2 21 22" >> $input
+echo "line3 31 32" >> $input
+
+line=`sed "$SLURM_ARRAY_TASK_ID"!d $input` # get n-th line from the file, n==SLURM_ARRAY_TASK_ID
+declare -a params=( $line )                # make an array of variables from the line
+
+# assign variables according to their column 
+inputID=${params[0]}     
+inputFILE=${params[1]}
+inputN=${params[2]}
+
+# print for your records what the variabls were as a line 
+echo "Using values: inputID=$inputID inputFILE=$inputFILE inputN=$inputN"
+

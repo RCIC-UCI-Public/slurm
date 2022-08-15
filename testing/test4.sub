@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#SBATCH --job-name=test4
+#SBATCH -p free
+#SBATCH --nodes=1
+#SBATCH --ntasks=1    
+#SBATCH --cpus-per-task=1    ## number of cores the job needs
+#SBATCH --mem-per-cpu=1G     ## RAM per CPU 
+#SBATCH --constraint=nvme
+#SBATCH --error=%A-%x.err
+#SBATCH --out=%A-%x.out
+
+currenthost=`hostname`
+echo "This job was run on $currenthost "
+
+echo "original TMPDIR=" $TMPDIR
+export TMPDIR=/tmp/$SLURM_JOBID
+mkdir $TMPDIR
+echo "new TMPDIR=" $TMPDIR
+
+echo "BEFORE: ls -ls /tmp"
+ls -l /tmp 
+rm -rf $TMPDIR
+echo "AFTER removal TMPDIR : ls -ls /tmp"
+ls -l /tmp 
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH --job-name=test11
+#SBATCH -p free
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --ntasks-per-node=15
+#SBATCH --mem=80G
+#SBATCH --error=%A-%x.err
+#SBATCH --out=%A-%x.out
+
+currenthost=`hostname`
+echo "This job was run on $currenthost "
+date
+
+squeue -j $SLURM_JOBID
+
+module load python/3.8.0
+python -c "import sys; print (sys.version)"

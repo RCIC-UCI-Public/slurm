@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#SBATCH --job-name=test8
+#SBATCH -p standard
+#SBATCH --nodes=1
+#SBATCH --ntasks=1           ## ask for 1 CPU 
+#SBATCH --mem-per-cpu=1G     ## ask for 1Gb memory per CPU 
+#SBATCH -t 00:02:00          ## time limit 2 min
+#SBATCH --array=1-6  
+#SBATCH --error=%A-%x-%a.err
+#SBATCH --out=%A-%x-%a.out
+
+currenthost=`hostname`
+echo "This job was run on $currenthost "
+
+INPUT=/tmp/files2load
+touch $INPUT
+echo "SRR17803616" >> $INPUT
+echo "SRR17803607" >> $INPUT
+echo "SRR17803606" >> $INPUT
+echo "SRR17803596" >> $INPUT
+echo "SRR17803595" >> $INPUT
+echo "SRR17803591" >> $INPUT
+
+fname=$(awk "NR==$SLURM_ARRAY_TASK_ID" $INPUT)    # variable Args will contain values that are specified on each line
+
+echo /path/to/some/binary/app.1.2.3  --split-3 $fname --outdir .
