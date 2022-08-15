@@ -69,7 +69,7 @@ srun -A NPW_LAB -p standard  --pty /bin/bash -i
 srun -A npw_lab -p standard  --pty /bin/bash -i 
 ```
 
-These  should fail
+These  should fail (as they don't request a gres as required by current job_submit.lua)
 
 ```bash
 srun -A HACKATHON_GPU -p standard  --pty /bin/bash -i 
