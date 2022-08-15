@@ -20,4 +20,4 @@ In testing/ there are test submit scripts
 - test11.sub: multiple tasks and memory requirement
 - test12.sub: run stress (or stress-ng) to go over the requested memory limit 
               job should be OOM 
-- interactive.md listing of srun commands with expected outcome
+- **interactive.md** listing of srun commands with expected outcome
