@@ -1,5 +1,5 @@
 # Configuration and Information
-A list of command to check configuratio and information
+A list of command to check configuration and information
 
 ## sinfo
 
