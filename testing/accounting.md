@@ -236,7 +236,7 @@ sacctmgr show assoc where account=npw format=account,user,partition,grpTres,MaxT
 ## zotledger
 
 ```bash
-*/pub/hpc3/zotledger -p standard,free --start 2022-05-01 -d 120 -A npw_lab*
+/pub/hpc3/zotledger -p standard,free --start 2022-05-01 -d 120 -A npw_lab
       DATE       USER          ACCOUNT  PARTITION     JOBID    JOBNAME ARRAYLEN     CPUS  WALLHOURS        SUs
 2022-08-11        npw          npw_lab   standard  14214309       bash        -        1       0.00       0.00
 2022-08-11        npw          npw_lab   standard  14214310       bash        -        1       0.00       0.00
