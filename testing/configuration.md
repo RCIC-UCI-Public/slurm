@@ -1,13 +1,13 @@
-# Info  
-A list of command to check accounting  and DB
+# Configuratio and Information
+A list of command to check configuratio and information
 
 ## sinfo
 
 ```bash
 sinfo -o %C
 sinfo -t down
-sinfo -s 
-sinfo -t idle,mix,alloc -p admin | cut -c1-40 
+sinfo -s
+sinfo -t idle,mix,alloc -p admin | cut -c1-40
 ```
 
 ```bash
@@ -36,16 +36,16 @@ hpc3-gpu-16-[01-07],hpc3-gpu-17-[02-04],hpc3-gpu-18-[01-02]  40         180000  
 hpc3-gpu-18-00                                               40         372000      intel,avx512          gpu:V100:4
 ```
 
-## scontrol
+## view current configuration
 
-View configuration
+view configuration
 
 ```bash
 scontrol show config
 scontrol -V
 ```
 
-Stop slurm from scheduling jpbs per partition and restart when needed
+stop slurm from scheduling jpbs per partition and restart when needed
 
 ```bash
 scontrol update PartitionName=free State=DOWN
@@ -61,14 +61,14 @@ on slurm-i14 reserve and relesase whole node
 /usr/local/bin/sresume hpc3-14-04
 ```
 
-## modify QOS 
+## modify QOS
 
-check qos 
+check qos
 ```bash
 sacctmgr show assoc format=user,account,qos where account=npw_lab
 ```
 
-Modify user QOS, show result
+modify user QOS, show result
 ```bash
 sacctmgr -i modify user npw where account=npw_lab set qos=low
 sacctmgr show assoc format=user,account,qos where account=npw_lab
