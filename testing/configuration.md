@@ -1,4 +1,4 @@
-# Configuratio and Information
+# Configuration and Information
 A list of command to check configuratio and information
 
 ## sinfo
