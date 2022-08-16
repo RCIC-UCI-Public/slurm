@@ -260,6 +260,5 @@ santucci           0 |   SANTUCCI_LAB         0 |       250,000   250,000
   C = hpc3       A = santucci_lab of root
 User           Usage |        Account     Usage | Account Limit Available (CPU hrs)
 ---------- --------- + -------------- --------- + ------------- ---------
-
 santucci           0 |   SANTUCCI_LAB         0 |       300,000   300,000
 ```
