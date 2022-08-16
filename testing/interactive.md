@@ -1,7 +1,7 @@
 # Interactive jobs 
  a list of command to run interactively 
 
-## for free partition
+## free partition
 
 start interactive job
 ```bash
@@ -15,7 +15,7 @@ srun --x11 -p free  --pty /bin/bash -i
 srun --x11 -p free -c 2 -N 1 --mem-per-cpu=10G --pty /bin/bash -i
 ```
 
-## for standard partition
+## standard partition
 
 start interative job
 ```bash
@@ -61,7 +61,7 @@ srun --ntasks=1 --cpus-per-task=6 --mem=45000M --pty /bin/bash -i
 scontrol show job $(squeue -u $USER -t R -h -o%i)
 ```
 
-## gpu and free-gpu 
+## gpu, free-gpu and free-debug  partitions
 
 ERROR not provideing GRES still gets to the GPU queue
 ```bash
@@ -82,15 +82,33 @@ srun -A NPW_LAB -p standard  --pty /bin/bash -i
 srun -A npw_lab -p standard  --pty /bin/bash -i 
 ```
 
-these  should fail (as they don't request a gres as required by current job_submit.lua)
-
+these  should fail (as they don't specify correct account or partition)
 ```bash
 srun -A HACKATHON_GPU -p standard  --pty /bin/bash -i 
 srun -A hackathon_gpu -p standard  --pty /bin/bash -i 
 srun -p gpu --pty /bin/bash -i
 ```
 
-## highmen hugemem and maxmem
+correct fail 
+```bash
+srun -p gpu-debug  --time=00:02:00  --pty /bin/bash -i
+srun: error: !!! slurm_job_submit error: please specify charge account
+srun: error: Unable to allocate resources: Invalid account or account/partition combination specified
+```
+
+ERROR: All should fail (no GRES specified)  but all succeed
+```bash
+srun -p gpu -A HACKATHON_GPU  --time=00:02:00  --pty /bin/bash -i
+srun -p gpu-debug -A HACKATHON_GPU  --time=00:02:00  --pty /bin/bash -i
+srun -p free-gpu   --time=00:02:00  --pty /bin/bash -i
+```
+
+## debug, highmen, hugemem and maxmem partitions
+
+interactive job in debug
+```bash
+srun -p debug  --time=00:02:00  --pty /bin/bash -i
+```
 
 interactive job in highmem
 ```bash
