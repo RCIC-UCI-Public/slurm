@@ -90,6 +90,32 @@ srun -A hackathon_gpu -p standard  --pty /bin/bash -i
 srun -p gpu --pty /bin/bash -i
 ```
 
+## highmen hugemem and maxmem
+
+interactive job in highmem
+```bash
+srun --mem=200G -p highmem --time=00:02:00  --pty /bin/bash -i
+queue -u $USER
+JOBID           PARTITION     NAME     USER    ACCOUNT ST        TIME  CPUS NODE NODELIST(REASON)
+14336791        highmem       bash      npw        npw  R        0:07    20    1 hpc3-20-24
+```
+
+interactive job in hugemem
+```bash
+srun --mem=400G -p hugemem --time=00:02:00  --pty /bin/bash -i
+hpc3-20-21 2001%  squeue -u $USER
+JOBID           PARTITION     NAME     USER    ACCOUNT ST        TIME  CPUS NODE NODELIST(REASON)
+14336795        hugemem       bash      npw        npw  R        0:08    23    1 hpc3-20-21
+```
+
+interactive job in maxmem
+```bash
+srun -p maxmem -c 40  --time=00:02:00  --pty /bin/bash -i
+hpc3-l18-02 2001%  squeue -u $USER
+JOBID           PARTITION     NAME     USER    ACCOUNT ST        TIME  CPUS NODE NODELIST(REASON)
+14336798        maxmem        bash      npw        npw  R        0:05    40    1 hpc3-l18-02
+```
+
 ## check group account 
 
 ```bash
