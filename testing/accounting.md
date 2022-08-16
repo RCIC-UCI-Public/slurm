@@ -248,3 +248,18 @@ sacctmgr show assoc where account=npw format=account,user,partition,grpTres,MaxT
 2022-08-15        npw          npw_lab   standard  14265528      test5        -        1       0.00       0.00
     TOTALS          -                -          -         -          -        -        -       0.01        0.2
 ```
+
+## setavailable.sh example
+```bash
+cd /data/utils/hpc3-slurm-sacctmgr
+./setavailable.sh santucci 300000
+User           Usage |        Account     Usage | Account Limit Available (CPU hrs)
+---------- --------- + -------------- --------- + ------------- ---------
+santucci           0 |   SANTUCCI_LAB         0 |       250,000   250,000
+ Modified account associations...
+  C = hpc3       A = santucci_lab of root
+User           Usage |        Account     Usage | Account Limit Available (CPU hrs)
+---------- --------- + -------------- --------- + ------------- ---------
+
+santucci           0 |   SANTUCCI_LAB         0 |       300,000   300,000
+```
