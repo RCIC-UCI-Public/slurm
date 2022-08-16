@@ -10,6 +10,8 @@ sinfo -s
 sinfo -t idle,mix,alloc -p admin | cut -c1-40
 ```
 
+# sinfo: group nodes by feature
+
 ```bash
 sinfo -o "%60N %10c %10m  %20f  %10G" -e
 ```
