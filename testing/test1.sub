@@ -12,10 +12,8 @@ currenthost=`hostname`
 echo "This job was run on $currenthost "
 
 module load samtools/1.10
-module load anaconda/2021.11
 module load fastqc/0.11.9
 module list
 
 total=`find /opt/rcic/Modules/modulefiles -type f | wc -l`
 echo "Installed modules: $total"
-
