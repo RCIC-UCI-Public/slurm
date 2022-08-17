@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=test6
+#SBATCH --job-name=test7
 #SBATCH -p free          ## partition/queue name
 #SBATCH --nodes=1
 #SBATCH --mem=1G

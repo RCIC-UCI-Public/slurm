@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=test7
+#SBATCH --job-name=test6
 #SBATCH -p free
 #SBATCH --nodes=1
 #SBATCH --ntasks=1           ## ask for 1 CPU 
