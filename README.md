@@ -22,9 +22,13 @@ In testing/ there are test submit scripts
               job should be OOM 
 - test13.sub: check nvidia-smi  
 
-Interative commands 
+Interactive commands 
 
 - **accounting.md** A list of command to check accounting  and DB
 - **configuration.md** A list of command to check configuration information
 - **interactive.md** A list of srun commands with expected outcome
 
+Scripts for validation
+
+- stats.sh  collects key slurm config and DB info. 
+  Run for validation of DB consistency when upgrading slurm 
