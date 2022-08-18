@@ -20,4 +20,11 @@ In testing/ there are test submit scripts
 - test11.sub: multiple tasks and memory requirement
 - test12.sub: run stress (or stress-ng) to go over the requested memory limit 
               job should be OOM 
-- **interactive.md** listing of srun commands with expected outcome
+- test13.sub: check nvidia-smi  
+
+Interative commands 
+
+- **accounting.md** A list of command to check accounting  and DB
+- **configuration.md** A list of command to check configuration information
+- **interactive.md** A list of srun commands with expected outcome
+
