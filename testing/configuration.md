@@ -43,6 +43,29 @@ hpc3-gpu-18-00                                               40         372000  
 ```bash
 sinfo -o "%20f %10G %10m %10c %N" -e
 ```
+expected output
+```text
+sinfo -o "%20f %10G %10m %10c %N" -e
+AVAIL_FEATURES       GRES       MEMORY     CPUS       NODELIST
+amd,epyc,epyc7551    (null)     500000     64         hpc3-19-[07,17],hpc3-l18-03
+amd,epyc,epyc7601    (null)     244000     64         hpc3-18-02
+intel,avx512         (null)     180000     40         hpc3-14-[00-31],hpc3-15-[00-19,21,24-31],hpc3-17-[08-11],hpc3-20-[00-15]
+amd,epyc,epyc7601    (null)     500000     64         hpc3-18-[00-01],hpc3-19-[00-06,08-11,18-19],hpc3-l18-[00-01]
+intel                (null)     500000     24         hpc3-19-12
+intel                (null)     500000     36         hpc3-19-[13-15]
+intel                (null)     500000     44         hpc3-19-16
+intel,avx512         (null)     180000     48         hpc3-20-[23,25-32]
+intel,avx512,fastscr (null)     180000     48         hpc3-21-[00-32],hpc3-22-[00-04,06-10]
+intel,avx512         (null)     245000     28         hpc3-l18-[04-05]
+intel,avx512         (null)     372000     40         hpc3-15-[20,22-23],hpc3-17-[00-03,12-19]
+intel,avx512         (null)     372000     48         hpc3-20-[16-20,24],hpc3-22-05
+intel,avx512,fastscr (null)     756000     48         hpc3-20-[21-22]
+intel,avx512         (null)     756000     40         hpc3-17-[04-07]
+intel,avx512         gpu:V100:4 180000     40         hpc3-gpu-16-00
+amd,epyc,epyc7551    (null)     1523544    40         hpc3-l18-02
+intel,avx512         gpu:V100:4 180000     40         hpc3-gpu-16-[01-07],hpc3-gpu-17-[02-04],hpc3-gpu-18-[01-02]
+intel,avx512         gpu:V100:4 372000     40         hpc3-gpu-18-00
+```
 
 ## view current configuration
 
