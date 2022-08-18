@@ -39,6 +39,11 @@ hpc3-gpu-16-[01-07],hpc3-gpu-17-[02-04],hpc3-gpu-18-[01-02]  40         180000  
 hpc3-gpu-18-00                                               40         372000      intel,avx512          gpu:V100:4
 ```
 
+# sinfo: group nodes by feature, node list at end of line
+```bash
+sinfo -o "%20f %10G %10m %10c %N" -e
+```
+
 ## view current configuration
 
 view configuration
