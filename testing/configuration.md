@@ -5,6 +5,7 @@ A list of command to check configuration and information
 
 ```bash
 sinfo -o %C
+sinfo -R
 sinfo -t down
 sinfo -s
 sinfo -t idle,mix,alloc -p admin | cut -c1-40
