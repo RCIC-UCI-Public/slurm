@@ -4,11 +4,11 @@ A list of command to check configuration and information
 ## sinfo
 
 ```bash
-sinfo -o %C
-sinfo -R
-sinfo -t down
-sinfo -s
-sinfo -t idle,mix,alloc -p admin | cut -c1-40
+sinfo -o %C                                    # summarize CPUS by status Active/Idle/Other/Total
+sinfo -R                                       # summarize down nodes, draining, drained
+sinfo -t down                                  # summarize down,drained nodes or nodes with slurmd not responding
+sinfo -s                                       # summarize by partition
+sinfo -t idle,mix,alloc -p admin | cut -c1-40  # summarize the number of nodes in each state: mix(partial use), alloc(full use),idle(no use)
 ```
 
 # sinfo: group nodes by feature
