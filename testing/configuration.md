@@ -91,3 +91,7 @@ sbank balance statement -a npw_lab
 sbank deposit -c hpc3 -a npw_lab -t 10
 sbank balance statement -a npw_lab
 ```
+## check job archiver being populated
+```
+watch -d 'find /var/slurm/jobscript_archive'
+```
