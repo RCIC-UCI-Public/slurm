@@ -68,7 +68,10 @@ on slurm-i14 reserve and relesase whole node
 check qos
 ```bash
 sacctmgr show assoc format=user,account,qos where account=npw_lab
+```
 
+check qos for all rcic-admins
+```bash
 for A in $(getent group rcic-admin_lab_share | awk -F: '{print $NF}' | cut -d ',' -f 2- | tr ',' ' '); do sacctmgr show assoc format=user%-20,account%-20,qos where account=${A}_lab; echo; done
 ```
 
