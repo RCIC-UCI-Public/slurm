@@ -1,6 +1,14 @@
 # Configuration and Information
 A list of command to check configuration and information
 
+## commands to check upon boot of slurm-i14
+```bash
+systemctl status slurmdbd.service
+systemctl status mariadb.service
+systemctl status slurmctl.service
+systemctl status slurm-jobarchive.service
+```
+
 ## sinfo
 
 ```bash
