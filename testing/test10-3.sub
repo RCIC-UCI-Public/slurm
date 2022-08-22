@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=test10
+#SBATCH --job-name=test10-3
 #SBATCH -p free
 #SBATCH --nodes=1
 #SBATCH --ntasks=1           ## ask for 1 CPU 
@@ -17,7 +17,7 @@ echo "Running on hosts: $SLURM_JOB_NODELIST"
 echo "Running on $SLURM_NNODES nodes."
 echo "Running on $SLURM_NPROCS processors."
 echo "Current working directory is `pwd`"
-echo "Running a dependency test"
+echo "Running a dependency test $SLURM_JOB_NAME"
 
-sleep 10
+sleep 5
 
