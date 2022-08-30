@@ -222,7 +222,7 @@ sacctmgr show assoc where account=npw format=account,user,partition,grpTres,MaxT
 set a limit
 
 ```bash
-sacctmgr modify user jcorrett set MaxTRESMins=cpu=10000
+sacctmgr modify user npw set MaxTRESMins=cpu=10000
 sacctmgr show assoc where account=npw format=account,user,partition,grpTres,MaxTresMins,GrpTresMins
 ```
 
